@@ -1,0 +1,99 @@
+"""
+stochastic_hh
+=============
+Guo et al. (2017) 随机 Hodgkin-Huxley (HH) 神经元相干共振与脉冲时间可靠性研究的核心可复用算法包。
+"""
+
+from stochastic_hh.config import (
+    C_MEMBRANE_UNIT,
+    DATA_DIR,
+    DT_DEFAULT,
+    E_K,
+    E_LEAK,
+    E_NA,
+    FIGURES_DIR,
+    GAMMA_K,
+    GAMMA_NA,
+    G_LEAK_UNIT,
+    HHModelConfig,
+    PA_TO_UA,
+    PROJECT_ROOT,
+    PS_MV_TO_PA,
+    RELIABILITY_DURATION_MS,
+    RELIABILITY_TRIALS,
+    RESULTS_DIR,
+    RHO_K,
+    RHO_NA,
+    SIGMA_I_DEFAULT,
+    SPIKE_THRESHOLD_MV,
+    SQUARE_WINDOW_D_MS,
+    STA_WINDOW_MS,
+    T_TRANSIENT_MS,
+    V_INIT_DEFAULT,
+)
+from stochastic_hh.channels_ssa import (
+    compute_gating_rates,
+    init_channel_states,
+    step_k_channels_ssa,
+    step_na_channels_ssa,
+)
+from stochastic_hh.stimulus import (
+    build_alpha_kernel,
+    generate_alpha_colored_noise,
+    generate_zero_stimulus,
+)
+from stochastic_hh.neuron import (
+    simulate_stochastic_hh,
+    step_membrane_voltage,
+)
+from stochastic_hh.metrics import (
+    compute_firing_rate_hz,
+    compute_isi_metrics,
+    compute_reliability_r,
+    compute_sta,
+    convolve_with_square_window,
+    extract_spikes,
+)
+
+__all__ = [
+    "C_MEMBRANE_UNIT",
+    "DATA_DIR",
+    "DT_DEFAULT",
+    "E_K",
+    "E_LEAK",
+    "E_NA",
+    "FIGURES_DIR",
+    "GAMMA_K",
+    "GAMMA_NA",
+    "G_LEAK_UNIT",
+    "HHModelConfig",
+    "PA_TO_UA",
+    "PROJECT_ROOT",
+    "PS_MV_TO_PA",
+    "RELIABILITY_DURATION_MS",
+    "RELIABILITY_TRIALS",
+    "RESULTS_DIR",
+    "RHO_K",
+    "RHO_NA",
+    "SIGMA_I_DEFAULT",
+    "SPIKE_THRESHOLD_MV",
+    "SQUARE_WINDOW_D_MS",
+    "STA_WINDOW_MS",
+    "T_TRANSIENT_MS",
+    "V_INIT_DEFAULT",
+    "compute_gating_rates",
+    "init_channel_states",
+    "step_k_channels_ssa",
+    "step_na_channels_ssa",
+    "build_alpha_kernel",
+    "generate_alpha_colored_noise",
+    "generate_zero_stimulus",
+    "simulate_stochastic_hh",
+    "step_membrane_voltage",
+    "compute_firing_rate_hz",
+    "compute_isi_metrics",
+    "compute_reliability_r",
+    "compute_sta",
+    "convolve_with_square_window",
+    "extract_spikes",
+]
